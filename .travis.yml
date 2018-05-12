@@ -1,0 +1,21 @@
+language: java
+
+jdk: oraclejdk8
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+script: pwd && ls -al && cd ProjectCI && mvn clean test-compile test && mvn cobertura:cobertura
+
+after_success:
+  - 'bash <(curl -s https://codecov.io/bash)'
+  
+deploy:
+  provider: heroku
+  api_key: $key_api     # $key_api you should create in heroku.After that, you must paste this variable, Environment Variables section in your project on Travis-CI 
+  skip_cleanup: true
+  app: githubcitest
+after_deploy:
+    - cd .. && chmod 777 $(pwd)/first.sh && $(pwd)/first.sh
+    - pwd && ls -al
