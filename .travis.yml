@@ -16,7 +16,7 @@ after_failure:
   
 deploy:
   provider: heroku
-  api_key: "l4gYj5kYbRIdv2UiYBnNug"
+  api_key: HEROKU_AUTH_TOKEN
   skip_cleanup: true
   app: githubciitest
 after_deploy:
