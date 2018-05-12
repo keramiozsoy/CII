@@ -13,7 +13,7 @@ after_success:
 
 after_failure:
   - echo $TRAVIS_TEST_RESULT
-  
+ 
 deploy:
   provider: heroku
   api_key: $HEROKU_AUTH_TOKEN
