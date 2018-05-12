@@ -16,7 +16,7 @@ after_failure:
  
 deploy:
   provider: heroku
-  api_key: $HEROKU_AUTH_TOKEN
+  api_key: $HEROKU_AUTH_TOKEN ## HEROKU_AUTH_TOKEN heroku/account bölümündeki api key i travis tarafındaki projenin settings/Environment Variables bölünübe  HEROKU_AUTH_TOKEN adıyla ekliyorsun
   skip_cleanup: true
   app: githubciitest
   
