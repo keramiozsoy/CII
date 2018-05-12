@@ -10,6 +10,9 @@ script: pwd && ls -al && cd ProjectCI && mvn clean test-compile test && mvn cobe
 
 after_success:
   - 'bash <(curl -s https://codecov.io/bash)'
+
+after_failure:
+  - echo $TRAVIS_TEST_RESULT
   
 #deploy:
 #  provider: heroku
